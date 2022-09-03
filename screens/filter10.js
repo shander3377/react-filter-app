@@ -4,8 +4,8 @@ import { Image, View, Text } from "react-native";
 // var width = faces["faces"][0]["bounds"]["size"]["width"];
 // var lefteyepos = faces["faces"][0]["LEFT_EYE"];
 // var righteyepos = faces["faces"][0]["RIGHT_EYE"];
-const Filter1 = (props) => {
-	console.warn(props["face"])
+const Filter10 = (props) => {
+	console.warn(props["face"]);
 	var faceHeight = props["face"]["bounds"]["size"]["height"];
 	var faceWidth = props["face"]["bounds"]["size"]["width"];
 	var leftEyePosition = props["face"]["LEFT_EYE"];
@@ -18,17 +18,16 @@ const Filter1 = (props) => {
 				(rightEyePosition.x - leftEyePosition.x)
 		)
 	) => (angleRad * 180) / Math.PI;
-
 	return (
 		<View
 			style={{
 				position: "absolute",
-				left: (leftEyePosition.x - glassesWidth * 0.345),
+				left: leftEyePosition.x - glassesWidth * 0.345,
 				top: leftEyePosition.y - glassesHeight * 0.5,
 			}}
 		>
 			<Image
-				source={require("../assets/glasses.png")}
+				source={require("../assets/Frapp-09.png")}
 				style={{
 					width: glassesWidth,
 					height: glassesHeight,
@@ -40,4 +39,4 @@ const Filter1 = (props) => {
 	);
 };
 
-export default Filter1;
+export default Filter10;
